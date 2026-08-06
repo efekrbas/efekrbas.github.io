@@ -113,7 +113,7 @@ function ToolIcon({ icon }: { icon: Tool["icon"] }) {
 
 function ToolCard({ tool }: { tool: Tool }) {
   return (
-    <div className="group flex h-full flex-col bg-base p-8">
+    <div className="group flex h-full flex-col border border-white/5 bg-base p-8 transition-colors hover:border-white/10">
       <div className="mb-12 flex items-start justify-between">
         <ToolIcon icon={tool.icon} />
         <span className="rounded border border-white/10 px-2 py-0.5 text-[10px] uppercase tracking-tighter text-editorial-muted">
@@ -181,7 +181,7 @@ function Index() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 gap-px border border-white/5 bg-white/5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3">
           {filteredTools.map((tool) => (
             <ToolCard key={tool.id} tool={tool} />
           ))}
