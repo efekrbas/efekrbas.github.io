@@ -5,6 +5,8 @@ import iconCode from "../assets/icon-code.png";
 import iconTypography from "../assets/icon-typography.png";
 import iconColor from "../assets/icon-color.png";
 import iconDhm from "../assets/dhm.png";
+import iconDmCleaner from "../assets/dmcleaner.png";
+import iconGunsLol from "../assets/gunslol.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -38,7 +40,7 @@ interface Tool {
   description: string;
   category: Category;
   href: string;
-  icon: "motion" | "utility" | "ai" | "code" | "typography" | "color";
+  icon: "motion" | "utility" | "ai" | "code" | "typography" | "color" | "dmcleaner" | "gunslol";
 }
 
 const tools: Tool[] = [
@@ -57,7 +59,7 @@ const tools: Tool[] = [
     description: "A modern, user-friendly Discord Direct Message cleaning tool with a beautiful GUI interface.",
     category: "All",
     href: "/discord-dm-cleaner",
-    icon: "utility",
+    icon: "dmcleaner",
   },
   {
     id: "guns-lol-username-checker",
@@ -65,7 +67,7 @@ const tools: Tool[] = [
     description: "Find unclaimed guns.lol usernames quickly and efficiently.",
     category: "All",
     href: "/guns-lol-username-checker",
-    icon: "utility",
+    icon: "gunslol",
   },
 ];
 
@@ -120,6 +122,26 @@ function ToolIcon({ icon }: { icon: Tool["icon"] }) {
           width={20}
           height={20}
           className="h-5 w-5 rounded-full object-cover"
+        />
+      )}
+      {icon === "dmcleaner" && (
+        <img
+          src={iconDmCleaner}
+          alt=""
+          loading="lazy"
+          width={24}
+          height={24}
+          className="h-6 w-6 rounded object-contain"
+        />
+      )}
+      {icon === "gunslol" && (
+        <img
+          src={iconGunsLol}
+          alt=""
+          loading="lazy"
+          width={24}
+          height={24}
+          className="h-6 w-6 rounded object-contain"
         />
       )}
     </div>
