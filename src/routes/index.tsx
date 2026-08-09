@@ -94,6 +94,14 @@ const tools: Tool[] = [
     href: "/discord-voice-joiner",
     icon: "voicejoiner",
   },
+  {
+    id: "discord-scam-detector",
+    title: "Discord Scam Detector",
+    description: "Protect your Discord servers by automatically detecting and neutralizing phishing attempts.",
+    category: "Discord",
+    href: "/discord-scam-detector",
+    icon: "ai",
+  },
 ];
 
 const categories: Category[] = [
