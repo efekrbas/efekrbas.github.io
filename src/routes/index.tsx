@@ -50,7 +50,7 @@ const tools: Tool[] = [
     description:
       "A specialized tool for managing and generating Discord badges and profile assets.",
     category: "All",
-    href: "https://efekrbas.github.io/discord-badge-manager/",
+    href: "/discord-badge-manager",
     icon: "utility",
   },
   {
