@@ -33,7 +33,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-type Category = "All";
+type Category = "All" | "Discord" | "GitHub" | "Guns.lol";
 
 interface Tool {
   id: string;
@@ -50,7 +50,7 @@ const tools: Tool[] = [
     title: "Discord Badge Manager",
     description:
       "A specialized tool for managing and generating Discord badges and profile assets.",
-    category: "All",
+    category: "Discord",
     href: "/discord-badge-manager",
     icon: "utility",
   },
@@ -58,7 +58,7 @@ const tools: Tool[] = [
     id: "discord-dm-cleaner",
     title: "Discord DM Cleaner",
     description: "A modern, user-friendly Discord Direct Message cleaning tool with a beautiful GUI interface.",
-    category: "All",
+    category: "Discord",
     href: "/discord-dm-cleaner",
     icon: "dmcleaner",
   },
@@ -66,7 +66,7 @@ const tools: Tool[] = [
     id: "guns-lol-username-checker",
     title: "Guns.lol Username Checker",
     description: "Find unclaimed guns.lol usernames quickly and efficiently.",
-    category: "All",
+    category: "Guns.lol",
     href: "/guns-lol-username-checker",
     icon: "gunslol",
   },
@@ -74,7 +74,7 @@ const tools: Tool[] = [
     id: "clicord",
     title: "clicord",
     description: "Use Discord directly in your terminal. A powerful CLI built for developers.",
-    category: "All",
+    category: "Discord",
     href: "/clicord",
     icon: "code",
   },
@@ -82,7 +82,7 @@ const tools: Tool[] = [
     id: "github-unfollowers",
     title: "GitHub Unfollowers",
     description: "Quickly discover who unfollowed you on GitHub with this lightweight script.",
-    category: "All",
+    category: "GitHub",
     href: "/github-unfollowers",
     icon: "code",
   },
@@ -90,7 +90,7 @@ const tools: Tool[] = [
     id: "discord-voice-joiner",
     title: "Discord Voice Joiner",
     description: "Keep your Discord accounts active in voice channels 24/7 with this Python script.",
-    category: "All",
+    category: "Discord",
     href: "/discord-voice-joiner",
     icon: "voicejoiner",
   },
@@ -98,6 +98,9 @@ const tools: Tool[] = [
 
 const categories: Category[] = [
   "All",
+  "Discord",
+  "GitHub",
+  "Guns.lol"
 ];
 
 function ToolIcon({ icon }: { icon: Tool["icon"] }) {
