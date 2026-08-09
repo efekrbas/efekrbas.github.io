@@ -51,7 +51,22 @@ const tools: Tool[] = [
     href: "https://efekrbas.github.io/discord-badge-manager/",
     icon: "utility",
   },
-
+  {
+    id: "discord-dm-cleaner",
+    title: "Discord DM Cleaner",
+    description: "A modern, user-friendly Discord Direct Message cleaning tool with a beautiful GUI interface.",
+    category: "All",
+    href: "/discord-dm-cleaner",
+    icon: "utility",
+  },
+  {
+    id: "guns-lol-username-checker",
+    title: "Guns.lol Username Checker",
+    description: "Find unclaimed guns.lol usernames quickly and efficiently.",
+    category: "All",
+    href: "/guns-lol-username-checker",
+    icon: "utility",
+  },
 ];
 
 const categories: Category[] = [
