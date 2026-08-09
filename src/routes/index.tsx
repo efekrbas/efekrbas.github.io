@@ -211,11 +211,16 @@ function ToolCard({ tool }: { tool: Tool }) {
 
 function Index() {
   const [activeCategory, setActiveCategory] = useState<Category>("All");
+  const [searchQuery, setSearchQuery] = useState("");
 
-  const filteredTools =
-    activeCategory === "All"
-      ? tools
-      : tools.filter((tool) => tool.category === activeCategory);
+  const filteredTools = tools
+    .filter((tool) => activeCategory === "All" || tool.category === activeCategory)
+    .filter(
+      (tool) =>
+        tool.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        tool.description.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+    .sort((a, b) => a.title.localeCompare(b.title));
 
   return (
     <div className="min-h-screen bg-base font-sans text-white selection:bg-editorial-accent selection:text-base">
@@ -237,20 +242,32 @@ function Index() {
       </header>
 
       <main className="mx-auto max-w-6xl px-6 py-12 md:py-20">
-        <div className="mb-16 flex flex-wrap items-center gap-4 border-b border-white/5 pb-8">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
-                activeCategory === category
-                  ? "bg-editorial-accent text-base"
-                  : "border border-white/10 text-editorial-muted hover:border-white/30 hover:text-white"
-              }`}
-            >
-              {category === "All" ? "All Tools" : category}
-            </button>
-          ))}
+        <div className="mb-16 flex flex-col items-start justify-between gap-6 border-b border-white/5 pb-8 md:flex-row md:items-center">
+          <div className="flex flex-wrap items-center gap-4">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setActiveCategory(category)}
+                className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
+                  activeCategory === category
+                    ? "bg-editorial-accent text-base"
+                    : "border border-white/10 text-editorial-muted hover:border-white/30 hover:text-white"
+                }`}
+              >
+                {category === "All" ? "All Tools" : category}
+              </button>
+            ))}
+          </div>
+
+          <div className="w-full md:w-auto">
+            <input
+              type="text"
+              placeholder="Search tools..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full rounded-full border border-white/10 bg-surface/50 px-6 py-2 text-sm text-white placeholder:text-editorial-muted transition-colors focus:border-editorial-accent focus:outline-none focus:ring-1 focus:ring-editorial-accent md:w-72"
+            />
+          </div>
         </div>
 
         <div className="grid grid-cols-1 gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3">
