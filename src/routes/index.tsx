@@ -69,6 +69,14 @@ const tools: Tool[] = [
     href: "/guns-lol-username-checker",
     icon: "gunslol",
   },
+  {
+    id: "clicord",
+    title: "clicord",
+    description: "Use Discord directly in your terminal. A powerful CLI built for developers.",
+    category: "All",
+    href: "/clicord",
+    icon: "code",
+  },
 ];
 
 const categories: Category[] = [
