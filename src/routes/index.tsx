@@ -85,6 +85,14 @@ const tools: Tool[] = [
     href: "/github-unfollowers",
     icon: "code",
   },
+  {
+    id: "discord-voice-joiner",
+    title: "Discord Voice Joiner",
+    description: "Keep your Discord accounts active in voice channels 24/7 with this Python script.",
+    category: "All",
+    href: "/discord-voice-joiner",
+    icon: "utility",
+  },
 ];
 
 const categories: Category[] = [
