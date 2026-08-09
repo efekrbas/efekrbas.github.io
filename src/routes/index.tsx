@@ -77,6 +77,14 @@ const tools: Tool[] = [
     href: "/clicord",
     icon: "code",
   },
+  {
+    id: "github-unfollowers",
+    title: "GitHub Unfollowers",
+    description: "Quickly discover who unfollowed you on GitHub with this lightweight script.",
+    category: "All",
+    href: "/github-unfollowers",
+    icon: "code",
+  },
 ];
 
 const categories: Category[] = [
