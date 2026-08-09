@@ -7,6 +7,7 @@ import iconColor from "../assets/icon-color.png";
 import iconDhm from "../assets/dhm.png";
 import iconDmCleaner from "../assets/dmcleaner.png";
 import iconGunsLol from "../assets/gunslol.png";
+import iconVoiceJoiner from "../assets/voicejoiner.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -40,7 +41,7 @@ interface Tool {
   description: string;
   category: Category;
   href: string;
-  icon: "motion" | "utility" | "ai" | "code" | "typography" | "color" | "dmcleaner" | "gunslol";
+  icon: "motion" | "utility" | "ai" | "code" | "typography" | "color" | "dmcleaner" | "gunslol" | "voicejoiner";
 }
 
 const tools: Tool[] = [
@@ -91,7 +92,7 @@ const tools: Tool[] = [
     description: "Keep your Discord accounts active in voice channels 24/7 with this Python script.",
     category: "All",
     href: "/discord-voice-joiner",
-    icon: "utility",
+    icon: "voicejoiner",
   },
 ];
 
@@ -161,6 +162,16 @@ function ToolIcon({ icon }: { icon: Tool["icon"] }) {
       {icon === "gunslol" && (
         <img
           src={iconGunsLol}
+          alt=""
+          loading="lazy"
+          width={24}
+          height={24}
+          className="h-6 w-6 rounded object-contain"
+        />
+      )}
+      {icon === "voicejoiner" && (
+        <img
+          src={iconVoiceJoiner}
           alt=""
           loading="lazy"
           width={24}
