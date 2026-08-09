@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { Sparkle } from "lucide-react";
 
 import iconCode from "../assets/icon-code.png";
 import iconTypography from "../assets/icon-typography.png";
@@ -128,7 +129,7 @@ function ToolIcon({ icon }: { icon: Tool["icon"] }) {
         />
       )}
       {icon === "ai" && (
-        <div className="h-5 w-2 rounded-full bg-editorial-accent" />
+        <Sparkle className="h-5 w-5 text-editorial-accent" />
       )}
       {icon === "code" && (
         <img

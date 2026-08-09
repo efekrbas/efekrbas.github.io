@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { Sparkle } from "lucide-react";
 
 export const Route = createFileRoute("/discord-scam-detector")({
   component: RouteComponent,
@@ -22,7 +23,7 @@ function RouteComponent() {
       <main className="mx-auto max-w-4xl px-6 py-12 md:py-24">
         <div className="mb-8 flex items-center gap-4">
           <div className="flex h-16 w-16 items-center justify-center rounded-xl border border-white/10 bg-surface">
-            <div className="h-5 w-2 rounded-full bg-editorial-accent" />
+            <Sparkle className="h-6 w-6 text-editorial-accent" />
           </div>
           <span className="rounded-full border border-white/10 px-3 py-1 text-xs font-medium uppercase tracking-widest text-editorial-muted">
             Security / Bot
