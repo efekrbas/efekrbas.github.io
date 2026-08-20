@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import iconGunsLol from "../assets/gunslol.png";
+import { Crosshair } from "lucide-react";
+import { Footer } from "../components/Footer";
 
 export const Route = createFileRoute("/guns-lol-username-checker")({
   component: RouteComponent,
@@ -7,7 +8,7 @@ export const Route = createFileRoute("/guns-lol-username-checker")({
 
 function RouteComponent() {
   return (
-    <div className="min-h-screen bg-base font-sans text-white selection:bg-editorial-accent selection:text-base">
+    <div className="min-h-screen bg-base font-sans text-white selection:bg-editorial-accent selection:text-base flex flex-col">
       <header className="border-b border-white/5 px-6 py-8">
         <div className="mx-auto flex max-w-6xl items-center justify-between">
           <Link to="/" className="font-serif text-2xl italic tracking-tight transition-colors hover:text-editorial-accent">
@@ -20,10 +21,10 @@ function RouteComponent() {
         </div>
       </header>
 
-      <main className="mx-auto max-w-4xl px-6 py-12 md:py-24">
+      <main className="mx-auto max-w-4xl px-6 py-12 md:py-24 flex-grow">
         <div className="mb-8 flex items-center gap-4">
           <div className="flex h-16 w-16 items-center justify-center rounded-xl border border-white/10 bg-surface">
-            <img src={iconGunsLol} alt="Guns.lol Icon" className="h-10 w-10 object-contain rounded-md" />
+            <Crosshair className="h-8 w-8 text-editorial-accent" />
           </div>
           <span className="rounded-full border border-white/10 px-3 py-1 text-xs font-medium uppercase tracking-widest text-editorial-muted">
             Utility
@@ -36,16 +37,40 @@ function RouteComponent() {
         </p>
 
         <div className="mb-16 rounded-2xl border border-white/10 bg-surface p-8 md:p-12">
-          <h2 className="mb-6 font-serif text-2xl">Features</h2>
-          <ul className="list-inside list-disc space-y-4 text-editorial-muted">
-            <li>High-speed username checking algorithm.</li>
-            <li>Easy to use from the command line.</li>
-            <li>Fully open-source and customizable.</li>
-            <li>Perfect for securing rare usernames.</li>
-          </ul>
+          <h2 className="mb-6 font-serif text-2xl">Why Use This Checker?</h2>
+          <p className="text-editorial-muted mb-4">
+            Securing a short, unique, or "OG" username on platforms like Guns.lol is highly competitive. Manually typing in usernames to see if they are taken is slow and tedious. 
+          </p>
+          <p className="text-editorial-muted">
+            This tool allows you to automate the process. By feeding it a dictionary or a generated list of character combinations, the checker rapidly queries the platform to find unregistered usernames so you can claim them immediately.
+          </p>
         </div>
 
-        <div className="flex flex-col gap-4 sm:flex-row">
+        <div className="mb-16 rounded-2xl border border-white/10 bg-surface p-8 md:p-12">
+          <h2 className="mb-6 font-serif text-2xl">Key Features</h2>
+          <ul className="list-inside list-disc space-y-4 text-editorial-muted">
+            <li><strong>High-Speed Async Checks:</strong> Uses asynchronous requests to check hundreds of names per minute.</li>
+            <li><strong>Proxy Support:</strong> Configure proxies to avoid rate-limiting or IP bans during large scans.</li>
+            <li><strong>Customizable Wordlists:</strong> Supports any text file list, making it easy to check dictionary words, 3-letter, or 4-letter usernames.</li>
+            <li><strong>Open-Source:</strong> Written in clear, readable code so you can modify it for other platforms if needed.</li>
+          </ul>
+        </div>
+        
+        <div className="mb-16 rounded-2xl border border-white/10 bg-surface p-8 md:p-12">
+          <h2 className="mb-6 font-serif text-2xl">Frequently Asked Questions</h2>
+          <div className="space-y-6 text-editorial-muted">
+            <div>
+              <h3 className="text-white font-medium mb-2">Can this tool claim the username for me?</h3>
+              <p>No, this is purely an availability checker. Once the tool outputs that a name is "Available," you must manually register it on the website yourself.</p>
+            </div>
+            <div>
+              <h3 className="text-white font-medium mb-2">Will my IP get banned?</h3>
+              <p>If you check too many names too quickly from a single IP, you might hit a temporary rate limit. We recommend using a delay between requests or utilizing the built-in proxy support for bulk checking.</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-4 sm:flex-row pb-12">
           <a
             href="https://github.com/efekrbas/guns.lol-username-checker"
             target="_blank"
@@ -57,6 +82,8 @@ function RouteComponent() {
           </a>
         </div>
       </main>
+      
+      <Footer />
     </div>
   );
 }

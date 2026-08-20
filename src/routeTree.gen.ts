@@ -10,33 +10,180 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ClicordRouteImport } from './routes/clicord'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DiscordBadgeManagerRouteImport } from './routes/discord-badge-manager'
+import { Route as DiscordDmCleanerRouteImport } from './routes/discord-dm-cleaner'
+import { Route as DiscordScamDetectorRouteImport } from './routes/discord-scam-detector'
+import { Route as DiscordVoiceJoinerRouteImport } from './routes/discord-voice-joiner'
+import { Route as GithubUnfollowersRouteImport } from './routes/github-unfollowers'
+import { Route as GunsLolUsernameCheckerRouteImport } from './routes/guns-lol-username-checker'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as TermsOfServiceRouteImport } from './routes/terms-of-service'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ClicordRoute = ClicordRouteImport.update({
+  id: '/clicord',
+  path: '/clicord',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DiscordBadgeManagerRoute = DiscordBadgeManagerRouteImport.update({
+  id: '/discord-badge-manager',
+  path: '/discord-badge-manager',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DiscordDmCleanerRoute = DiscordDmCleanerRouteImport.update({
+  id: '/discord-dm-cleaner',
+  path: '/discord-dm-cleaner',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DiscordScamDetectorRoute = DiscordScamDetectorRouteImport.update({
+  id: '/discord-scam-detector',
+  path: '/discord-scam-detector',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DiscordVoiceJoinerRoute = DiscordVoiceJoinerRouteImport.update({
+  id: '/discord-voice-joiner',
+  path: '/discord-voice-joiner',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GithubUnfollowersRoute = GithubUnfollowersRouteImport.update({
+  id: '/github-unfollowers',
+  path: '/github-unfollowers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GunsLolUsernameCheckerRoute = GunsLolUsernameCheckerRouteImport.update({
+  id: '/guns-lol-username-checker',
+  path: '/guns-lol-username-checker',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsOfServiceRoute = TermsOfServiceRouteImport.update({
+  id: '/terms-of-service',
+  path: '/terms-of-service',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/clicord': typeof ClicordRoute
+  '/contact': typeof ContactRoute
+  '/discord-badge-manager': typeof DiscordBadgeManagerRoute
+  '/discord-dm-cleaner': typeof DiscordDmCleanerRoute
+  '/discord-scam-detector': typeof DiscordScamDetectorRoute
+  '/discord-voice-joiner': typeof DiscordVoiceJoinerRoute
+  '/github-unfollowers': typeof GithubUnfollowersRoute
+  '/guns-lol-username-checker': typeof GunsLolUsernameCheckerRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/terms-of-service': typeof TermsOfServiceRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/clicord': typeof ClicordRoute
+  '/contact': typeof ContactRoute
+  '/discord-badge-manager': typeof DiscordBadgeManagerRoute
+  '/discord-dm-cleaner': typeof DiscordDmCleanerRoute
+  '/discord-scam-detector': typeof DiscordScamDetectorRoute
+  '/discord-voice-joiner': typeof DiscordVoiceJoinerRoute
+  '/github-unfollowers': typeof GithubUnfollowersRoute
+  '/guns-lol-username-checker': typeof GunsLolUsernameCheckerRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/terms-of-service': typeof TermsOfServiceRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/clicord': typeof ClicordRoute
+  '/contact': typeof ContactRoute
+  '/discord-badge-manager': typeof DiscordBadgeManagerRoute
+  '/discord-dm-cleaner': typeof DiscordDmCleanerRoute
+  '/discord-scam-detector': typeof DiscordScamDetectorRoute
+  '/discord-voice-joiner': typeof DiscordVoiceJoinerRoute
+  '/github-unfollowers': typeof GithubUnfollowersRoute
+  '/guns-lol-username-checker': typeof GunsLolUsernameCheckerRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/terms-of-service': typeof TermsOfServiceRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/clicord'
+    | '/contact'
+    | '/discord-badge-manager'
+    | '/discord-dm-cleaner'
+    | '/discord-scam-detector'
+    | '/discord-voice-joiner'
+    | '/github-unfollowers'
+    | '/guns-lol-username-checker'
+    | '/privacy-policy'
+    | '/terms-of-service'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/clicord'
+    | '/contact'
+    | '/discord-badge-manager'
+    | '/discord-dm-cleaner'
+    | '/discord-scam-detector'
+    | '/discord-voice-joiner'
+    | '/github-unfollowers'
+    | '/guns-lol-username-checker'
+    | '/privacy-policy'
+    | '/terms-of-service'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/clicord'
+    | '/contact'
+    | '/discord-badge-manager'
+    | '/discord-dm-cleaner'
+    | '/discord-scam-detector'
+    | '/discord-voice-joiner'
+    | '/github-unfollowers'
+    | '/guns-lol-username-checker'
+    | '/privacy-policy'
+    | '/terms-of-service'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ClicordRoute: typeof ClicordRoute
+  ContactRoute: typeof ContactRoute
+  DiscordBadgeManagerRoute: typeof DiscordBadgeManagerRoute
+  DiscordDmCleanerRoute: typeof DiscordDmCleanerRoute
+  DiscordScamDetectorRoute: typeof DiscordScamDetectorRoute
+  DiscordVoiceJoinerRoute: typeof DiscordVoiceJoinerRoute
+  GithubUnfollowersRoute: typeof GithubUnfollowersRoute
+  GunsLolUsernameCheckerRoute: typeof GunsLolUsernameCheckerRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  TermsOfServiceRoute: typeof TermsOfServiceRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +195,99 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/clicord': {
+      id: '/clicord'
+      path: '/clicord'
+      fullPath: '/clicord'
+      preLoaderRoute: typeof ClicordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/discord-badge-manager': {
+      id: '/discord-badge-manager'
+      path: '/discord-badge-manager'
+      fullPath: '/discord-badge-manager'
+      preLoaderRoute: typeof DiscordBadgeManagerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/discord-dm-cleaner': {
+      id: '/discord-dm-cleaner'
+      path: '/discord-dm-cleaner'
+      fullPath: '/discord-dm-cleaner'
+      preLoaderRoute: typeof DiscordDmCleanerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/discord-scam-detector': {
+      id: '/discord-scam-detector'
+      path: '/discord-scam-detector'
+      fullPath: '/discord-scam-detector'
+      preLoaderRoute: typeof DiscordScamDetectorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/discord-voice-joiner': {
+      id: '/discord-voice-joiner'
+      path: '/discord-voice-joiner'
+      fullPath: '/discord-voice-joiner'
+      preLoaderRoute: typeof DiscordVoiceJoinerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/github-unfollowers': {
+      id: '/github-unfollowers'
+      path: '/github-unfollowers'
+      fullPath: '/github-unfollowers'
+      preLoaderRoute: typeof GithubUnfollowersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guns-lol-username-checker': {
+      id: '/guns-lol-username-checker'
+      path: '/guns-lol-username-checker'
+      fullPath: '/guns-lol-username-checker'
+      preLoaderRoute: typeof GunsLolUsernameCheckerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms-of-service': {
+      id: '/terms-of-service'
+      path: '/terms-of-service'
+      fullPath: '/terms-of-service'
+      preLoaderRoute: typeof TermsOfServiceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ClicordRoute: ClicordRoute,
+  ContactRoute: ContactRoute,
+  DiscordBadgeManagerRoute: DiscordBadgeManagerRoute,
+  DiscordDmCleanerRoute: DiscordDmCleanerRoute,
+  DiscordScamDetectorRoute: DiscordScamDetectorRoute,
+  DiscordVoiceJoinerRoute: DiscordVoiceJoinerRoute,
+  GithubUnfollowersRoute: GithubUnfollowersRoute,
+  GunsLolUsernameCheckerRoute: GunsLolUsernameCheckerRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
+  TermsOfServiceRoute: TermsOfServiceRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -1,14 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Sparkle } from "lucide-react";
-
-import iconCode from "../assets/icon-code.png";
-import iconTypography from "../assets/icon-typography.png";
-import iconColor from "../assets/icon-color.png";
-import iconDhm from "../assets/dhm.png";
-import iconDmCleaner from "../assets/dmcleaner.png";
-import iconGunsLol from "../assets/gunslol.png";
-import iconVoiceJoiner from "../assets/voicejoiner.png";
+import { Sparkle, Terminal, Trash2, Award, UserMinus, Mic, Crosshair, Wrench, Type, Palette } from "lucide-react";
+import { Footer } from "../components/Footer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -42,7 +35,7 @@ interface Tool {
   description: string;
   category: Category;
   href: string;
-  icon: "motion" | "utility" | "ai" | "code" | "typography" | "color" | "dmcleaner" | "gunslol" | "voicejoiner";
+  icon: "motion" | "utility" | "ai" | "code" | "typography" | "color" | "dmcleaner" | "gunslol" | "voicejoiner" | "unfollower";
 }
 
 const tools: Tool[] = [
@@ -85,7 +78,7 @@ const tools: Tool[] = [
     description: "Quickly discover who unfollowed you on GitHub with this lightweight script.",
     category: "GitHub",
     href: "/github-unfollowers",
-    icon: "code",
+    icon: "unfollower",
   },
   {
     id: "discord-voice-joiner",
@@ -113,84 +106,19 @@ const categories: Category[] = [
 ];
 
 function ToolIcon({ icon }: { icon: Tool["icon"] }) {
+  const iconClass = "h-5 w-5 text-editorial-accent";
   return (
     <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-white/10 bg-surface transition-colors group-hover:border-editorial-accent/50">
-      {icon === "motion" && (
-        <div className="h-5 w-5 rounded-sm bg-editorial-accent/20" />
-      )}
-      {icon === "utility" && (
-        <img
-          src={iconDhm}
-          alt=""
-          loading="lazy"
-          width={24}
-          height={24}
-          className="h-6 w-6 object-contain"
-        />
-      )}
-      {icon === "ai" && (
-        <Sparkle className="h-5 w-5 text-editorial-accent" />
-      )}
-      {icon === "code" && (
-        <img
-          src={iconCode}
-          alt=""
-          loading="lazy"
-          width={20}
-          height={20}
-          className="h-5 w-5 object-contain"
-        />
-      )}
-      {icon === "typography" && (
-        <img
-          src={iconTypography}
-          alt=""
-          loading="lazy"
-          width={20}
-          height={20}
-          className="h-5 w-5 object-contain"
-        />
-      )}
-      {icon === "color" && (
-        <img
-          src={iconColor}
-          alt=""
-          loading="lazy"
-          width={20}
-          height={20}
-          className="h-5 w-5 rounded-full object-cover"
-        />
-      )}
-      {icon === "dmcleaner" && (
-        <img
-          src={iconDmCleaner}
-          alt=""
-          loading="lazy"
-          width={24}
-          height={24}
-          className="h-6 w-6 rounded object-contain"
-        />
-      )}
-      {icon === "gunslol" && (
-        <img
-          src={iconGunsLol}
-          alt=""
-          loading="lazy"
-          width={24}
-          height={24}
-          className="h-6 w-6 rounded object-contain"
-        />
-      )}
-      {icon === "voicejoiner" && (
-        <img
-          src={iconVoiceJoiner}
-          alt=""
-          loading="lazy"
-          width={24}
-          height={24}
-          className="h-6 w-6 rounded object-contain"
-        />
-      )}
+      {icon === "motion" && <div className="h-5 w-5 rounded-sm bg-editorial-accent/20" />}
+      {icon === "utility" && <Award className={iconClass} />}
+      {icon === "ai" && <Sparkle className={iconClass} />}
+      {icon === "code" && <Terminal className={iconClass} />}
+      {icon === "typography" && <Type className={iconClass} />}
+      {icon === "color" && <Palette className={iconClass} />}
+      {icon === "dmcleaner" && <Trash2 className={iconClass} />}
+      {icon === "gunslol" && <Crosshair className={iconClass} />}
+      {icon === "voicejoiner" && <Mic className={iconClass} />}
+      {icon === "unfollower" && <UserMinus className={iconClass} />}
     </div>
   );
 }
@@ -289,35 +217,7 @@ function Index() {
         </div>
       </main>
 
-      <footer className="mx-auto flex max-w-6xl flex-col items-center gap-6 border-t border-white/5 px-6 py-12 md:flex-row md:justify-between">
-        <p className="text-xs uppercase tracking-widest text-editorial-muted">
-          Archive Project &copy; 2026
-        </p>
-        <div className="flex gap-8 text-xs font-medium uppercase tracking-widest">
-          <a
-            href="https://twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors hover:text-editorial-accent"
-          >
-            Twitter
-          </a>
-          <a
-            href="https://github.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors hover:text-editorial-accent"
-          >
-            GitHub
-          </a>
-          <a
-            href="mailto:hello@archive01.dev"
-            className="transition-colors hover:text-editorial-accent"
-          >
-            Suggest Tool
-          </a>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
